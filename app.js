@@ -6,13 +6,17 @@ function sortear() {
     let numeroAleatorio;
 
     for (let i = 0; i < quantidade; i++){
-        numeroAleatorio = obterNumeroAleatorio(de, ate);
+        if (de >= ate) {
+            alert ('Reveja os números inseridos!')
+        } else {
+            numeroAleatorio = obterNumeroAleatorio(de, ate);
 
-        while (sorteados.includes(numeroAleatorio)) {
+            while (sorteados.includes(numeroAleatorio)) {
             numeroAleatorio = obterNumeroAleatorio(de,ate);
-        }
+            }
 
-        sorteados.push(numeroAleatorio);
+             sorteados.push(numeroAleatorio);
+        }
     }
 
     let resultado = document.getElementById('resultado');
