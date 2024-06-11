@@ -5,17 +5,21 @@ function sortear() {
     let sorteados = [];
     let numeroAleatorio;
 
-    for (let i = 0; i < quantidade; i++){
+    if (quantidade > (ate - de)) {
+        alert ('Reveja os números inseridos!');
+    } else {
         if (de >= ate) {
-            alert ('Reveja os números inseridos!')
+            alert ('Reveja os números inseridos!');
         } else {
-            numeroAleatorio = obterNumeroAleatorio(de, ate);
+        for (let i = 0; i < quantidade; i++){
+                numeroAleatorio = obterNumeroAleatorio(de, ate);
 
-            while (sorteados.includes(numeroAleatorio)) {
-            numeroAleatorio = obterNumeroAleatorio(de,ate);
+                while (sorteados.includes(numeroAleatorio)) {
+                numeroAleatorio = obterNumeroAleatorio(de,ate);
+                }
+
+                sorteados.push(numeroAleatorio);
             }
-
-             sorteados.push(numeroAleatorio);
         }
     }
 
